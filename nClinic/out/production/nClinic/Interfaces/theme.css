@@ -1,0 +1,49 @@
+.tab-header-background{
+    -fx-background-color: linear-gradient(#429b67, #58d68d);
+}
+
+.tab{
+    -fx-cursor: hand;
+}
+
+.jfx-tab-pane .depth-container {
+    -fx-effect: none;
+}
+
+.tab-selected-line {
+    -fx-background-color: #145a32;
+    -fx-pref-height: 3;
+}
+
+.jfx-tab-pane .tab-header-area .jfx-rippler {
+    -jfx-rippler-fill: #ffffff;
+}
+
+.jfx-button {
+    -fx-background-color: #86b99c;
+    -fx-text-fill: #ffffff;
+    -fx-cursor: hand;
+}
+
+.jfx-text-field{
+    -fx-alignment: center-right;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #ffffff;
+    -fx-border-color : #e9e9e9;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+}
+
+.table-view .column-header {
+    -fx-background-color: #ffffff;
+    -fx-border-color : #e9e9e9;
+}
+
+.table-view:focused{
+    -fx-background-color: #ffffff;
+}

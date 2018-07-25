@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1366.0" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clinic.Controller">
+   <children>
+      <JFXTabPane side="RIGHT" style="-fx-background-color: #ffffff;" stylesheets="@theme.css">
+         <tabs>
+            <Tab fx:id="reciption" style="-fx-rotate: 270;">
+               <content>
+                  <fx:include fx:id="reciptionTabPage" source="reciption.fxml" />
+               </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="الاستقبال" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </graphic>
+            </Tab>
+            <Tab fx:id="queries" style="-fx-rotate: 270;">
+               <content>
+                  <fx:include fx:id="queriesTabPage" source="queries.fxml" />
+               </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="استعلامات" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </graphic>
+            </Tab>
+            <Tab style="-fx-rotate: 270;" styleClass="second">
+               <content>
+                  <fx:include fx:id="editTabPage" source="edit.fxml" />
+               </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <Label text="تعديل" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </graphic>
+            </Tab>
+            <Tab fx:id="doctor" style="-fx-rotate: 270;">
+               <content>
+                  <fx:include fx:id="doctorTabPage" source="doctor.fxml" />
+               </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="الطبيب" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </graphic>
+            </Tab>
+            <Tab fx:id="finance" style="-fx-rotate: 270;">
+               <content>
+                  <fx:include fx:id="usersTabPage" source="finance.fxml" />
+               </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="حسابات" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </graphic>
+            </Tab>
+            <Tab fx:id="users" style="-fx-rotate: 270;">
+               <content>
+                  <fx:include fx:id="financeTabPage" source="users.fxml" />
+               </content>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="المستخدمين" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </graphic>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</StackPane>

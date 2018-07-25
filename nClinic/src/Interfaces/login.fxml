@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clinic.Controller">
+   <children>
+      <VBox alignment="CENTER" layoutX="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="307.0" spacing="15.0" style="-fx-background-color: #eaecee;" stylesheets="@theme.css">
+         <children>
+            <Label text="تسجيل الدخول">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" startX="-100.0" stroke="#00000066">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Line>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@surgeon.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="الإدخال الذي قمت به خاطئ" visible="false" />
+            <JFXTextField fx:id="user" alignment="CENTER_RIGHT" focusColor="#429b67" focusTraversable="false" promptText="اسم المستخدم" />
+            <JFXPasswordField fx:id="pass" alignment="CENTER_RIGHT" focusColor="#429b67" focusTraversable="false" labelFloat="true" prefWidth="100.0" promptText="كلمة المرور">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </JFXPasswordField>
+            <JFXButton focusTraversable="false" onAction="#login" text="دخول">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets left="100.0" right="100.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

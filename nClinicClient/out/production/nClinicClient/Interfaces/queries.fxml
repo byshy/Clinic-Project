@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1266.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clinic.QueriesController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f4f4f4;" stylesheets="@theme.css" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox layoutX="53.0" layoutY="-1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="768.0" prefWidth="1160.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="اسم المريض" />
+                        <JFXTextField fx:id="patiant_name_In_queries" focusColor="#429b67" prefHeight="25.0" prefWidth="206.0" />
+                        <Label text="تاريخ البحث من" />
+                        <JFXDatePicker fx:id="date_picker1_In_queries" nodeOrientation="LEFT_TO_RIGHT" />
+                        <Label text="الى" />
+                        <JFXDatePicker fx:id="date_picker2_In_queries" nodeOrientation="LEFT_TO_RIGHT" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="نوع الزيارة" />
+                        <JFXRadioButton fx:id="rb_examination" nodeOrientation="RIGHT_TO_LEFT" text="كشفية">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="visitType3" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rb_revision" nodeOrientation="RIGHT_TO_LEFT" text="متابعة" toggleGroup="$visitType3" />
+                        <Line endX="10.0" rotate="90.0" startX="-10.0" />
+                        <Label text="الحضور" />
+                        <JFXRadioButton fx:id="rb_attended" nodeOrientation="RIGHT_TO_LEFT" text="حضر">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="attended" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rb_didnt_attend" nodeOrientation="RIGHT_TO_LEFT" text="لم يحضر" toggleGroup="$attended" />
+                        <Line endX="10.0" rotate="90.0" startX="-10.0" />
+                        <Label text="نوع الحضور" />
+                        <JFXRadioButton fx:id="rb_with_app" nodeOrientation="RIGHT_TO_LEFT" text="بموعد">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="attendType" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rb_without_app" nodeOrientation="RIGHT_TO_LEFT" text="بدون موعد" toggleGroup="$attendType" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="table_view_in_queries" prefHeight="200.0" prefWidth="200.0" style="-fx-selection-bar: #99d1b1;" stylesheets="@theme.css" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="id_In_queriesTable" prefWidth="39.0" text="#" />
+                        <TableColumn fx:id="name_In_queriesTable" prefWidth="370.0" text="الاسم" />
+                        <TableColumn fx:id="reserveDate_In_queriesTable" prefWidth="81.0" text="تاريخ الحجز" />
+                        <TableColumn fx:id="reserveTime_In_queriesTable" prefWidth="81.0" text="وقت الحجز" />
+                        <TableColumn fx:id="attendDate_In_queriesTable" prefWidth="81.0" text="تاريخ الحضور" />
+                        <TableColumn fx:id="attendTime_In_queriesTable" prefWidth="81.0" text="وقت الحضور" />
+                        <TableColumn fx:id="visitType_In_queriesTable" prefWidth="81.0" text="نوع الزيارة" />
+                        <TableColumn fx:id="attendance_In_queriesTable" prefWidth="81.0" text="الحضور" />
+                        <TableColumn fx:id="attendanceType_In_queriesTable1" prefWidth="81.0" text="نوع الحضور" />
+                        <TableColumn fx:id="payment_In_queriesTable" prefWidth="81.0" text="المبلع المدفوع" />
+                        <TableColumn fx:id="paymentDate_In_queriesTable" prefWidth="81.0" text="تاريخ الدفع" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" prefWidth="200.0">
+                     <children>
+                        <JFXButton onAction="#refreshTable" prefWidth="50.0" text="تحديث">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton onAction="#clearAll" prefWidth="50.0" text="جديد">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <stylesheets>
+                  <URL value="@theme.css" />
+               </stylesheets>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

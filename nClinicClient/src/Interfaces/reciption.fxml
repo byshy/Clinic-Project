@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1266.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clinic.ReciptionController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f4f4f4;" stylesheets="@theme.css" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox layoutX="495.0" layoutY="38.0" prefHeight="690.0" prefWidth="719.0">
+               <children>
+                  <HBox alignment="BASELINE_RIGHT" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <JFXButton onAction="#refresh_table" prefWidth="90.0" text="تحديث الجدول">
+                           <HBox.margin>
+                              <Insets right="200.0" />
+                           </HBox.margin></JFXButton>
+                        <JFXTextField fx:id="patiant_nameIn_reciption" focusColor="#429b67" labelFloat="true" prefHeight="25.0" prefWidth="419.0" promptText="اسم المريض">
+                           <stylesheets>
+                              <URL value="@theme.css" />
+                           </stylesheets>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="table_view_In_reciption" nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="200.0" style="-fx-selection-bar: #99d1b1;" stylesheets="@theme.css" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="id_In_reciptionTable" prefWidth="57.0" text="#" />
+                        <TableColumn fx:id="name_In_reciptionTable" prefWidth="377.0" text="اسم المريض" />
+                        <TableColumn fx:id="age_In_reciptionTable" prefWidth="60.0" text="العمر" />
+                        <TableColumn fx:id="sex_In_reciptionTable" prefWidth="60.0" text="الجنس" />
+                        <TableColumn fx:id="address_In_reciptionTable" prefWidth="67.0" text="العنوان" />
+                        <TableColumn fx:id="connect_In_reciptionTable" prefWidth="95.0" text="التواصل" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="3.0" layoutY="38.0" prefHeight="690.0" prefWidth="425.0">
+               <children>
+                  <Label text="إنشاء ملف جديد">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="allFieldsAreRequired" text="جميع الحقول مطلوبة" textFill="RED" visible="false" />
+                  <GridPane prefHeight="290.0" prefWidth="505.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.0" minWidth="10.0" prefWidth="371.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="54.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <JFXTextField fx:id="new_patiant_In_reciption" focusColor="#429b67">
+                           <GridPane.margin>
+                              <Insets left="50.0" right="30.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <HBox alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
+                           <children>
+                              <JFXTextField fx:id="ageY_In_reciption" focusColor="#429b67" nodeOrientation="LEFT_TO_RIGHT" prefWidth="50.0" promptText="سنة">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="ageM_In_reciption" focusColor="#429b67" nodeOrientation="LEFT_TO_RIGHT" prefWidth="50.0" promptText="شهر">
+                                 <HBox.margin>
+                                    <Insets right="235.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="2">
+                           <children>
+                              <JFXRadioButton fx:id="sexM_In_reciption" nodeOrientation="RIGHT_TO_LEFT" text="ذكر">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="gender" />
+                                 </toggleGroup></JFXRadioButton>
+                              <JFXRadioButton fx:id="sexF_In_reciption" nodeOrientation="RIGHT_TO_LEFT" text="انثى" textAlignment="RIGHT" toggleGroup="$gender">
+                                 <HBox.margin>
+                                    <Insets right="210.0" />
+                                 </HBox.margin>
+                              </JFXRadioButton>
+                           </children>
+                           <padding>
+                              <Insets right="30.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <children>
+                              <JFXComboBox fx:id="location" focusColor="#429b67">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </JFXComboBox>
+                           </children>
+                        </HBox>
+                        <JFXTextField fx:id="connect_In_reciption" focusColor="#429b67" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="50.0" right="30.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <Label text="الاسم" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="العمر" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="الحنس" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="العنوان" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="التواصل" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <HBox alignment="TOP_CENTER" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXButton onAction="#delete_patiant_button_In_reciption" prefWidth="50.0" text="حذف" />
+                        <JFXButton onAction="#edit_patiant_button_In_reciption" prefWidth="50.0" text="تعديل" />
+                        <JFXButton onAction="#new_patiant_button_In_reciption" prefWidth="50.0" text="جديد" />
+                        <JFXButton fx:id="save_patiant_buttonID_In_reciption" onAction="#save_patiant_button_In_reciption" prefWidth="50.0" text="حفظ" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #86b99c; -fx-border-radius: 10; -fx-background-color: white; -fx-background-radius: 10;" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="40.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <AnchorPane fx:id="reservation" layoutX="2.0" layoutY="2.0" prefHeight="270.0" prefWidth="381.0">
+                           <children>
+                              <JFXButton layoutX="54.0" layoutY="65.0" onAction="#new_patiant_button_In_reciptionFragment1" text="جديد" />
+                              <JFXButton layoutX="171.0" layoutY="231.0" onAction="#save_patiant_button_In_reciptionFragment1" prefWidth="40.0" text="حفظ" />
+                              <Label layoutX="291.0" layoutY="69.0" text="اسم المريض" />
+                              <Label layoutX="291.0" layoutY="111.0" text="تاريخ الحجز" />
+                              <Label layoutX="291.0" layoutY="152.0" text="وقت الحجز" />
+                              <JFXTextField fx:id="new_patiant_In_reciptionFragment1" focusColor="#429b67" layoutX="109.0" layoutY="65.0" prefHeight="25.0" prefWidth="171.0" stylesheets="@theme.css" />
+                              <JFXDatePicker fx:id="date_picker_In_reciptionFragment1" layoutX="109.0" layoutY="106.0" />
+                              <JFXTimePicker fx:id="time_picker_In_reciptionFragment1" layoutX="109.0" layoutY="147.0" />
+                              <Label layoutX="154.0" layoutY="24.0" text="حجز موعد">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="error_fragment1" layoutX="13.0" layoutY="24.0" prefHeight="33.0" prefWidth="122.0" text="جميع الحقول مطلوبة" textFill="RED" visible="false">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton layoutX="142.0" layoutY="231.0" onAction="#nextPage1" text="&lt;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="attendance" layoutX="2.0" layoutY="2.0" prefHeight="271.0" prefWidth="381.0" visible="false">
+                           <children>
+                              <JFXButton layoutX="54.0" layoutY="65.0" onAction="#new_patiant_button_In_reciptionFragment2" text="جديد" />
+                              <Label layoutX="291.0" layoutY="69.0" text="اسم المريض" />
+                              <Label layoutX="291.0" layoutY="111.0" text="تاريخ الحضور" />
+                              <Label layoutX="291.0" layoutY="152.0" text="وقت الحضور" />
+                              <JFXTextField fx:id="new_patiant_In_reciptionFragment2" focusColor="#429b67" layoutX="109.0" layoutY="65.0" prefHeight="25.0" prefWidth="171.0" />
+                              <JFXDatePicker fx:id="date_picker_In_reciptionFragment2" layoutX="109.0" layoutY="106.0" />
+                              <JFXTimePicker fx:id="time_picker_In_reciptionFragment2" layoutX="109.0" layoutY="147.0" />
+                              <JFXButton layoutX="171.0" layoutY="231.0" onAction="#save_patiant_button_In_reciptionFragment2" prefWidth="40.0" text="حفظ" />
+                              <Label layoutX="291.0" layoutY="192.0" text="نوع الزيارة" />
+                              <JFXRadioButton fx:id="examin_In_reciptionFragment2" layoutX="210.0" layoutY="192.0" nodeOrientation="RIGHT_TO_LEFT" text="كشفية">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="visitType" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="followUP_In_reciptionFragment2" layoutX="136.0" layoutY="192.0" nodeOrientation="RIGHT_TO_LEFT" text="متابعة" toggleGroup="$visitType" />
+                              <Label layoutX="141.0" layoutY="24.0" text="تسجيل حضور">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="saved_Infragment2" layoutX="14.0" layoutY="69.0" text="مسجل" textFill="RED" visible="false" />
+                              <Label fx:id="error_fragment2" layoutX="13.0" layoutY="24.0" prefHeight="33.0" prefWidth="122.0" text="جميع الحقول مطلوبة" textFill="RED" visible="false">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton layoutX="142.0" layoutY="231.0" onAction="#nextPage2" text="&lt;" />
+                              <JFXButton layoutX="215.0" layoutY="231.0" onAction="#prevPage2" text="&gt;" />
+                              <JFXCheckBox fx:id="attended_In_reciption" layoutX="45.0" layoutY="111.0" nodeOrientation="RIGHT_TO_LEFT" text="حضر" />
+                              <JFXCheckBox fx:id="withAppointment_In_reciption" layoutX="38.0" layoutY="152.0" nodeOrientation="RIGHT_TO_LEFT" text="بموعد" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="payment" layoutX="2.0" layoutY="2.0" prefHeight="271.0" prefWidth="381.0" visible="false">
+                           <children>
+                              <JFXButton layoutX="54.0" layoutY="65.0" onAction="#new_patiant_button_In_reciptionFragment3" text="جديد" />
+                              <JFXButton layoutX="171.0" layoutY="231.0" onAction="#save_patiant_button_In_reciptionFragment3" prefWidth="40.0" text="حفظ" />
+                              <Label layoutX="291.0" layoutY="69.0" text="اسم المريض" />
+                              <Label layoutX="291.0" layoutY="111.0" text="المبلغ المستلم" />
+                              <JFXTextField fx:id="new_patiant_In_reciptionFragment3" focusColor="#429b67" layoutX="109.0" layoutY="65.0" prefHeight="25.0" prefWidth="171.0" />
+                              <Label layoutX="129.0" layoutY="24.0" text="استلام دفعة مالية">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="payment_In_reciptionFragment3" focusColor="#429b67" layoutX="109.0" layoutY="107.0" prefHeight="25.0" prefWidth="171.0" />
+                              <JFXDatePicker fx:id="date_picker_In_reciptionFragment3" layoutX="109.0" layoutY="153.0" />
+                              <Label layoutX="291.0" layoutY="153.0" text="تاريخ الاستلام" />
+                              <Label fx:id="error_fragment3" layoutX="13.0" layoutY="24.0" prefHeight="33.0" prefWidth="122.0" text="جميع الحقول مطلوبة" textFill="RED" visible="false">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton layoutX="215.0" layoutY="231.0" onAction="#prevPage3" text="&gt;" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <Line endX="265.0" layoutX="489.0" layoutY="409.0" rotate="90.0" startX="-420.0" stroke="#004a1f8c" translateX="50.0" translateY="-25.0" AnchorPane.bottomAnchor="358.5" AnchorPane.topAnchor="408.5" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
